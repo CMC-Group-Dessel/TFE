@@ -1,0 +1,45 @@
+{
+  "name": "gatsby-stack-template",
+  "version": "1.0.0",
+  "private": true,
+  "description": "gatsby-stack-template",
+  "author": "bert-cmc",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop --host=0.0.0.0",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit",
+    "pretty": "prettier --write .",
+    "pretty:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@radix-ui/react-accordion": "^1.2.2",
+    "@radix-ui/react-slot": "^1.1.1",
+    "@tailwindcss/postcss": "^4.0.3",
+    "autoprefixer": "^10.4.20",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "gatsby": "^5.14.1",
+    "gatsby-plugin-postcss": "^6.14.0",
+    "lucide-react": "^0.474.0",
+    "postcss": "^8.5.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^3.0.1",
+    "tailwindcss": "^4.0.3",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "typescript": "^5.3.3",
+    "prettier": "^3.4.2",
+    "prettier-plugin-organize-imports": "^4.1.0"
+  }
+}
