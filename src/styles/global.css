@@ -1,1 +1,9 @@
 @import "tailwindcss";
+@theme {
+    --color-bgColor : #ffffff;
+    --color-button: #009fe3;
+    --color-darkBlue: #03344a;
+    --color-lightBlue: #edf6fa;
+    --color-lightBlueHover: #dcf1fa;
+    --color-lightGrayBG: #f8f8f8;
+}

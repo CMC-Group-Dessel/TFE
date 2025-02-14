@@ -1,0 +1,5 @@
+backend:
+  name: github
+  repo: CMC-Group-Dessel/TFE
+  auth_scope: repo
+  open_authoring: true
