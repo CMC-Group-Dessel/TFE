@@ -1,19 +1,15 @@
 import React, { FunctionComponent, ReactNode } from "react";
-
-import { title } from "process";
-import Container from "@/components/partials/ContainerComponent";
 import ListComponent from "../listComponent/ListComponent";
-import { Eye, Grid } from "lucide-react";
-import GridComponent from "@/components/partials/GridComponent";
-import NewsCardComponent from "./CardComponent";
 import CardComponent from "./CardComponent";
-import FlexRow from "@/components/partials/FlexRow";
-import { Description } from "../card/card";
+import GridComponent from "../grid/GridComponent";
+
 
 interface CardComponentGridProps {
-  rows: number,
-  columns: number,
+  rows: number;
+  columns: number;
   data: any[];
+  cardVariant: string;
+  cardSize: string;
   hovered?: ReactNode;
 }
 
@@ -21,7 +17,9 @@ const CardComponentGrid: FunctionComponent<CardComponentGridProps> = ({
   data,
   hovered,
   columns,
-  rows
+  rows,
+  cardVariant,
+  cardSize,
 }) => {
   return (
     <GridComponent rows={rows} columns={columns}>
@@ -33,6 +31,8 @@ const CardComponentGrid: FunctionComponent<CardComponentGridProps> = ({
               title={item.title}
               description={item.description}
               hovered={<>{hovered}</>}
+              variant={cardVariant}
+              size={cardSize}
             ></CardComponent>
           );
         }}

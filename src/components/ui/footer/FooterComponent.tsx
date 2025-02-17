@@ -1,15 +1,74 @@
 import Container from "@/components/partials/ContainerComponent";
-import React, { FunctionComponent } from "react";
-import FooterBanner from "./FooterBanner";
+import FlexRow from "@/components/partials/FlexRow";
+import React, { FunctionComponent, ReactNode } from "react";
+import { Description, Title } from "../card/card";
+import { ChildrenPropsInterface } from "@/interface/ChildrenPropsInterface";
+import { LinkedinIcon } from "lucide-react";
+import { Button } from "../button";
+
+interface FooterBannerProps {
+  title: string;
+  button?: ReactNode;
+}
+
+const FooterBanner: FunctionComponent<FooterBannerProps> = ({
+  title,
+  button,
+}) => {
+  return (
+    <div className=" mt-2  w-[50%] h-[150px] bg-lightBlue rounded-[15px] p-5 content-center align-middle absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2">
+      <FlexRow>
+        <div className="w-[40%] text-cmcBlue">
+          <Title>{title}</Title>
+        </div>
+        <div className="w-[60%]">
+          {button}</div>
+      </FlexRow>
+    </div>
+  );
+};
 
 const FooterComponent: FunctionComponent = () => {
   return (
-    <>
-      <Container classes="bg-darkBlue">
-        <FooterBanner title={""} description={""}></FooterBanner>
+    <Container classes="mt-10 bg-darkBlue relative py-20 ">
+      <FooterBanner title={"Klaar voor een sterk netwerk?"} />
+      <Container>
+        <FlexRow>
+          <FooterBlock>
+            <h1>CMC Group</h1>
+            <h1>E Portaal</h1>
+          </FooterBlock>
+
+          <FooterBlock />
+          <FooterBlock />
+          <FooterBlock>
+            <Description>Help desk</Description>
+            <h1>014 37 33 11</h1>
+          </FooterBlock>
+
+          <FooterBlock>
+            <Description>Contact gegevens</Description>
+            <h1>TFE</h1>
+            <h1>Turnhoutsebaan 115</h1>
+            <h1>2480 Dessel</h1>
+            <h1>014 37 33 11</h1>
+            <FooterSeperator />
+            <LinkedinIcon />
+          </FooterBlock>
+        </FlexRow>
       </Container>
-    </>
+    </Container>
   );
+};
+
+const FooterBlock: FunctionComponent<ChildrenPropsInterface> = ({
+  children,
+}) => {
+  return <div className="w-1/5  m-[10px] text-white">{children}</div>;
+};
+
+const FooterSeperator: FunctionComponent = () => {
+  return <div className="mt-[5%] mb-[5%] w-2/3 h-[1px] bg-white" />;
 };
 
 export default FooterComponent;

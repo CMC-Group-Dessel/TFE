@@ -1,15 +1,15 @@
 import React, { FunctionComponent, ReactNode } from "react";
 import { Description, Title } from "../card/card";
 import { ChildrenPropsInterface } from "@/interface/ChildrenPropsInterface";
-import GridComponent from "@/components/partials/GridComponent";
+
 import FlexRow from "@/components/partials/FlexRow";
 
-export interface SterkteCardProps {
+interface SterkteCardProps {
   title: string;
   description: string;
   number: number;
 }
-export interface CirkelProps {
+interface CirkelProps {
   number: number;
 }
 
@@ -20,9 +20,11 @@ const SterkteCardComponent: FunctionComponent<SterkteCardProps> = ({
 }) => {
   return (
     <SterkteCardContrainer>
-      <FlexRow>
+      <FlexRow classes="items-center"> 
         <CardBlock>
-          <CardCirkel number={number} />
+          <div className="flex items-center">
+            <CardCirkel number={number} />
+          </div>
         </CardBlock>
         <CardBlock>
           <Title className="text-4xl">{title}</Title>
@@ -45,12 +47,10 @@ const CardBlock: FunctionComponent<ChildrenPropsInterface> = ({ children }) => {
 
 const CardCirkel: FunctionComponent<CirkelProps> = ({ number }) => {
   return (
-    <div className="w-[150px] h-[150px] bg-darkBlue text-lightBlue  rounded-full content-around text-6xl text-center ">
+    <div className="w-[150px] h-[150px] bg-darkBlue text-lightBlue rounded-full flex items-center justify-center text-9xl">
       {number}
     </div>
   );
 };
 
 export default SterkteCardComponent;
-SterkteCardContrainer;
-CardBlock;

@@ -8,14 +8,18 @@ export interface GridProps {
 }
 
 const GridComponent: FunctionComponent<GridProps> = ({
-  classes,
+  classes = "",
   children,
   columns,
   rows,
 }) => {
   return (
     <div
-      className={`${classes} grid grid-cols-${columns} gap-4`}
+      className={`${classes} grid gap-4`}
+      style={{
+        gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
+        gridTemplateRows: `repeat(${rows}, minmax(0, 1fr))`,
+      }}
     >
       {children}
     </div>

@@ -21,7 +21,7 @@ const ContainerComponent: FunctionComponent<ContrainerProps> = ({
 const ContrainerFrame: FunctionComponent<ChildrenPropsInterface> = ({
   children,
 }) => {
-  return <div className="pl-[8%] pt-[3%] pr-[8%] pb-[3%]">{children}</div>;
+  return <div className="pl-[12%] pr-[12%] pb-[3%] pt-[3%]">{children}</div>;
 };
 
 export default ContainerComponent;
