@@ -10,15 +10,15 @@ const SterkteCardList: FunctionComponent = () => {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pretium nulla vel efficitur rutrum. Donec placerat erat ac dui malesuada interdum. Fusce nec placerat sapien. Suspendisse quis diam eu risus ornare sagittis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris quis lacus convallis est facilisis semper. Integer id tellus auctor, aliquet tortor in, dapibus sapien. Donec dolor nulla, placerat vitae dolor non, efficitur laoreet ipsum. Nam risus eros, ",
     },
     {
-      title: "Objectieve netwerk analyse",
+      title: "Netwerk analyse",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pretium nulla vel efficitur rutrum. Donec placerat erat ac dui malesuada interdum. Fusce nec placerat sapien. Suspendisse quis diam eu risus ornare sagittis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris quis lacus convallis est facilisis semper. Integer id tellus auctor, aliquet tortor in, dapibus sapien. Donec dolor nulla, placerat vitae dolor non, efficitur laoreet ipsum. Nam risus eros, ",
     },
     {
-      title: "Jaren ervaring",
+      title: "Ervaring",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pretium nulla vel efficitur rutrum. Donec placerat erat ac dui malesuada interdum. Fusce nec placerat sapien. Suspendisse quis diam eu risus ornare sagittis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris quis lacus convallis est facilisis semper. Integer id tellus auctor, aliquet tortor in, dapibus sapien. Donec dolor nulla, placerat vitae dolor non, efficitur laoreet ipsum. Nam risus eros, ",
-    }
+    },
   ];
   return (
     <>

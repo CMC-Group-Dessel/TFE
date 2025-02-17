@@ -15,15 +15,12 @@ export interface NewsCardProps {
   title: string;
   description: string;
   hovered: ReactNode;
-
   variant: string;
   size: string;
-
   classes?: string;
 }
 
-
-const cardVariants = cva(
+const cardStyles = cva(
   "transition-transform duration-300 hover:scale-105 relative p-4",
   {
     variants: {
@@ -42,7 +39,6 @@ const cardVariants = cva(
   }
 );
 
-
 const CardComponent: FunctionComponent<NewsCardProps> = ({
   title,
   description,
@@ -55,11 +51,10 @@ const CardComponent: FunctionComponent<NewsCardProps> = ({
 
   return (
     <Card
-      className={cn(cardVariants({ variant, size }), classes)}
+      className={cn(cardStyles({ variant, size }), classes)}
       onMouseEnter={() => setShowText(true)}
       onMouseLeave={() => setShowText(false)}
     >
-      
       <Title>{title}</Title>
       <Description>{description}</Description>
 

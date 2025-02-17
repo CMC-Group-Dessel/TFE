@@ -2,8 +2,8 @@
 @theme {
     --color-bgColor : #ffffff;
     --color-cmcBlue: #009fe3;
-    --color-darkBlue: #03344a;
-    --color-lightBlue: #edf6fa;
-    --color-lightBlueHover: #dcf1fa;
-    --color-lightGrayBG: #f8f8f8;
+    --color-cmcdarkBlue: #03344a;
+    --color-cmclightBlue: #edf6fa;
+    --color-cmclightBlueHover: #dcf1fa;
+    --color-cmclightGray: #f8f8f8;
 }

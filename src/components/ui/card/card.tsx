@@ -35,7 +35,10 @@ const Title = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("font-semibold leading-none tracking-tight text-3xl", className)}
+    className={cn(
+      "font-semibold leading-none tracking-tight text-3xl",
+      className
+    )}
     {...props}
   />
 ));
@@ -73,11 +76,4 @@ const CardFooter = React.forwardRef<
 ));
 CardFooter.displayName = "CardFooter";
 
-export {
-  Card,
-  CardHeader,
-  CardFooter,
-  Title,
-  Description,
-  CardContent,
-};
+export { Card, CardHeader, CardFooter, Title, Description, CardContent };

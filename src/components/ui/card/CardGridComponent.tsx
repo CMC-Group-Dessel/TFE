@@ -3,7 +3,6 @@ import ListComponent from "../listComponent/ListComponent";
 import CardComponent from "./CardComponent";
 import GridComponent from "../grid/GridComponent";
 
-
 interface CardComponentGridProps {
   rows: number;
   columns: number;

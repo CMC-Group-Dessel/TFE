@@ -3,7 +3,7 @@ import { Title, Description } from "../card/card";
 import { ChildrenPropsInterface } from "@/interface/ChildrenPropsInterface";
 
 const SubjectComponent: FunctionComponent<ChildrenPropsInterface> = ({
-  children,
+  children, classes
 }) => {
   return <SubjectComoponentFrame>{children}</SubjectComoponentFrame>;
 };
@@ -11,9 +11,7 @@ const SubjectComponent: FunctionComponent<ChildrenPropsInterface> = ({
 const SubjectComoponentFrame: FunctionComponent<ChildrenPropsInterface> = ({
   children,
 }) => {
-  return (
-    <div className="mb-[2%] w-[50%]">{children}</div>
-  );
+  return <div className="mb-[2%] w-[50%]">{children}</div>;
 };
 
 export default SubjectComponent;

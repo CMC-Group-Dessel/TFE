@@ -1,8 +1,9 @@
-import React, { FunctionComponent, ReactNode } from "react";
+import React, { FunctionComponent, ReactNode, useTransition } from "react";
 import { Description, Title } from "../card/card";
 import { ChildrenPropsInterface } from "@/interface/ChildrenPropsInterface";
 
 import FlexRow from "@/components/partials/FlexRow";
+import { useTranslation } from "react-i18next";
 
 interface SterkteCardProps {
   title: string;
@@ -12,22 +13,22 @@ interface SterkteCardProps {
 interface CirkelProps {
   number: number;
 }
-
 const SterkteCardComponent: FunctionComponent<SterkteCardProps> = ({
   title,
   description,
   number,
 }) => {
+  const { t, i18n } = useTranslation();
   return (
     <SterkteCardContrainer>
-      <FlexRow classes="items-center"> 
+      <FlexRow classes="items-center">
         <CardBlock>
-          <div className="flex items-center">
+          <FlexRow>
             <CardCirkel number={number} />
-          </div>
+          </FlexRow>
         </CardBlock>
         <CardBlock>
-          <Title className="text-4xl">{title}</Title>
+          <Title className="text-4xl">{t(title)}</Title>
           <Description>{description}</Description>
         </CardBlock>
       </FlexRow>
@@ -47,7 +48,7 @@ const CardBlock: FunctionComponent<ChildrenPropsInterface> = ({ children }) => {
 
 const CardCirkel: FunctionComponent<CirkelProps> = ({ number }) => {
   return (
-    <div className="w-[150px] h-[150px] bg-darkBlue text-lightBlue rounded-full flex items-center justify-center text-9xl">
+    <div className="w-[150px] h-[150px] bg-cmcdarkBlue text-cmclightBlue rounded-full flex items-center justify-center text-7xl">
       {number}
     </div>
   );

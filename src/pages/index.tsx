@@ -1,7 +1,7 @@
 import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
 import { Button } from "@/components/ui/button";
-import { Trans } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 import ContainerComponent from "@/components/partials/ContainerComponent";
 import SterkteCardList from "@/components/ui/sterkteCard/SterkteCardGrid";
@@ -12,8 +12,11 @@ import { Container, Eye } from "lucide-react";
 import CardComponentGrid from "@/components/ui/card/CardGridComponent";
 import FooterComponent from "@/components/ui/footer/FooterComponent";
 import ListComponent from "@/components/ui/listComponent/ListComponent";
+import ChangeLanguage from "@/components/partials/ChangeLanguage";
 
 const IndexPage: React.FC<PageProps> = () => {
+  const { t, i18n } = useTranslation();
+
   const nieuwsberichten = [
     { title: "Titel bericht 1", description: "13/02/2025" },
     { title: "Titel bericht 2", description: "13/02/2025" },
@@ -44,34 +47,69 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <main>
       <ContainerComponent>
-        <p></p>
+
+        <SubjectComponent>
+          <div className="w-[75%]">
+
+          <Title className="text-cmcBlue">{t("Bedrijf veiligheid")}</Title>
+          </div>
+          <Description>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                felis odio, pretium et erat nec, ultrices sollicitudin magna.
+                Proin ac ligula dolor. Ut ultricies, libero vitae malesuada
+                egestas, urna lectus lobortis leo, nec maximus lacus lorem ut
+                lectus. Aenean consectetur velit vehicula sodales tincidunt.
+          </Description>
+        </SubjectComponent>
+
+
+
       </ContainerComponent>
-      <ContainerComponent classes="bg-lightBlue rounded-t-lg">
+      <ContainerComponent>
+        <ContainerComponent>
+          <FlexRow>
+            <SubjectComponent>
+              <Title>{t("Waarom TFE")} ?</Title>
+              <Description className="w-[50%]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                felis odio, pretium et erat nec, ultrices sollicitudin magna.
+                Proin ac ligula dolor. Ut ultricies, libero vitae malesuada
+                egestas, urna lectus lobortis leo, nec maximus lacus lorem ut
+                lectus. Aenean consectetur velit vehicula sodales tincidunt.
+              </Description>
+              <h1 className="text-cmcBlue font-bold">{t("Ontdek visie")}</h1>
+            </SubjectComponent>
+          </FlexRow>
+        </ContainerComponent>
+      </ContainerComponent>
+
+      <ContainerComponent background="lightBlue">
         <FlexRow>
           <SubjectComponent>
-            <Title className="text-3xl">Onze sterktes</Title>
+            <Title className="text-3xl">{t("Onze sterktes")}</Title>
           </SubjectComponent>
         </FlexRow>
         <SterkteCardList></SterkteCardList>
       </ContainerComponent>
 
-      <ContainerComponent classes="bg-[#f8f8f8]">
+      <ContainerComponent background="lightGray">
         <FlexRow>
           <SubjectComponent>
-            <Title className="text-3xl">Laatse nieuws</Title>
+            <Title className="text-3xl">{t("Laatste nieuws")}</Title>
             <Description className="text-xl w-[55%]">
-              Ontdek hier de nieuwste ontwikkelingen op vlak van CyberSecurity.
+              {t("Ontdek ontwikkelingen CyberSecurity.")}
             </Description>
           </SubjectComponent>
         </FlexRow>
+
         <CardComponentGrid
           columns={4}
           rows={1}
           data={nieuwsberichten}
           hovered={
             <FlexRow>
-              <Eye></Eye>
-              <Description>weergaven</Description>
+              <Eye />
+              <Description>1000 {t("Weergaven")}</Description>
             </FlexRow>
           }
           cardVariant={"default"}
@@ -85,7 +123,7 @@ const IndexPage: React.FC<PageProps> = () => {
           <div className="w-[50%]">
             <SubjectComponent>
               <Title>We make IT work!</Title>
-              <Description>Onderstaande services bieden wij aan.</Description>
+              <Description>{t("Services")}</Description>
             </SubjectComponent>
             <CardComponentGrid
               rows={2}
@@ -99,6 +137,7 @@ const IndexPage: React.FC<PageProps> = () => {
       </ContainerComponent>
 
       <FooterComponent></FooterComponent>
+      <ChangeLanguage />
     </main>
   );
 };
